@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 import joblib
 
+nltk.download("popular")
 
 def preprocess_tweet(tweet):
     # Remove links
