@@ -107,7 +107,7 @@ def write_project_info():
 
     st.write("""<p align="center">SUPERVISED BY DR. A.B SAKPERE</p>""", unsafe_allow_html=True)
 
-    st.image("../images/social_media_bot.png")  
+    st.image("images/social_media_bot.png")  
 
     st.write("""
     #### Project Introduction
@@ -174,7 +174,7 @@ def write_project_info():
 
     st.write("""#### Feature Importance""", unsafe_allow_html=True)
 
-    st.image("../images/feature_importance.png")  
+    st.image("images/feature_importance.png")  
 
     st.write("<br>", unsafe_allow_html=True)
 
