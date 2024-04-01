@@ -1,0 +1,6 @@
+streamlit
+re
+nltk
+numpy 
+pandas 
+joblib
