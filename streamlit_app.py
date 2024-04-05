@@ -263,13 +263,13 @@ def take_user_inputs():
             # Create columns for tweet inputs
             col1, col2, col3, col4 = st.columns(4)
             with col1:
-                retweeted_status_id = st.number_input(f"No of retweets", min_value=0, max_value=100, key=f"retweets_{i}")
-                in_reply_to_status_id = st.number_input(f"No of replies", min_value=0, max_value=100, key=f"replies_{i}")
+                retweeted_status_id = st.number_input(f"No of retweets", min_value=0, max_value=10000000000, key=f"retweets_{i}")
+                in_reply_to_status_id = st.number_input(f"No of replies", min_value=0, max_value=10000000000, key=f"replies_{i}")
             with col2:
-                num_mentions = st.number_input(f"No of mentions", min_value=0, max_value=100, key=f"mentions_{i}")
-                num_hashtags = st.number_input(f"No of hashtags", min_value=0, max_value=100, key=f"hashtags_{i}")
+                num_mentions = st.number_input(f"No of mentions", min_value=0, max_value=10000000000, key=f"mentions_{i}")
+                num_hashtags = st.number_input(f"No of hashtags", min_value=0, max_value=10000000000, key=f"hashtags_{i}")
             with col3:
-                num_urls = st.number_input(f"No of URLs", min_value=0, max_value=100, key=f"urls_{i}")
+                num_urls = st.number_input(f"No of URLs", min_value=0, max_value=10000000000, key=f"urls_{i}")
                 created_at_date = st.date_input(f"Date", key=f"date_{i}")
             with col4:
                 created_at_time = st.time_input(f"Time", key=f"time_{i}")
