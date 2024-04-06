@@ -295,7 +295,7 @@ def take_user_inputs():
         engineered_df = feature_engineering(base_df, eng_df, columns)
     
     else:
-        usr_features = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 190805.7372881356, "Nil"]
+        usr_features = [10.0, 10.0, 10.0, 10.0, 10.0, 20.0, 16.0, 190805.7372881356, "Nil"]
         columns = [
             "retweets", "replies", "favoriteC", "hashtag", "url", "mentions", "intertime", "ffratio", "tweets"
         ]
