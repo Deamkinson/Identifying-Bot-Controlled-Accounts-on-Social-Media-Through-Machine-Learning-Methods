@@ -295,17 +295,15 @@ def take_user_inputs():
         engineered_df = feature_engineering(base_df, eng_df, columns)
     
     else:
-        usr_features = [10.0, 10.0, 10.0, 10.0, 10.0, 20.0, 16.0, 190805.7372881356, "Nil"]
+        usr_features = [0, 0, 0, 0, 0, 0, 0, 0, "Nil"]
         columns = [
             "retweets", "replies", "favoriteC", "hashtag", "url", "mentions", "intertime", "ffratio", "tweets"
         ]
         engineered_df = pd.DataFrame([usr_features], columns=columns)
 
-    final_df = pd.concat([engineered_df, base_df], axis=1)
+    df = pd.concat([engineered_df, base_df], axis=1)
 
-    final_df.head()
-
-    return final_df
+    return base_df
 
 
 
@@ -322,12 +320,9 @@ def predict_input(user_input):
     vectorizer = model['vectorizer']
     classifier = model['classifier']
 
-    tweets_transformed = vectorizer.transform(user_input['tweets'])
-    tweets_transformed_df = pd.DataFrame(tweets_transformed.toarray(), columns=vectorizer.get_feature_names_out())
+    X = pd.concat([scaled_df], axis=1)
 
-    X = pd.concat([scaled_df, tweets_transformed_df], axis=1)
-
-    prediction = classifier.predict(X)
+    prediction = classifier.predict(user_input)
 
     return prediction
 
@@ -346,4 +341,3 @@ if __name__ == "__main__":
             st.write("Detected account type: Bot-controlled account")
         else:
             st.write("Detected account type: Human-operated account")
-
