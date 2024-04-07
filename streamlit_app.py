@@ -234,7 +234,7 @@ def take_user_inputs():
         "listed_count": listed_count
     }
 
-    base_df = pd.DataFrame([base_input])
+    df = pd.DataFrame([base_input])
 
     st.sidebar.header("Tweet Information Description")
 
@@ -289,21 +289,14 @@ def take_user_inputs():
             st.write("")  
             st.write("")  
 
-    
-        eng_df = pd.DataFrame(tweet_info)
-
-        engineered_df = feature_engineering(base_df, eng_df, columns)
-    
     else:
+        
         usr_features = [0, 0, 0, 0, 0, 0, 0, 0, "Nil"]
         columns = [
             "retweets", "replies", "favoriteC", "hashtag", "url", "mentions", "intertime", "ffratio", "tweets"
         ]
-        engineered_df = pd.DataFrame([usr_features], columns=columns)
-
-    df = pd.concat([engineered_df, base_df], axis=1)
-
-    return base_df
+        
+    return df
 
 
 
